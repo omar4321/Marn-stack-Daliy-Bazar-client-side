@@ -1,10 +1,12 @@
 import React from 'react';
+import Button from '@restart/ui/esm/Button';
 import { Badge } from "@material-ui/core";
 import styled from 'styled-components'
 import { Search, ShoppingCartOutlined } from "@material-ui/icons";
 import { mobile } from "../responsive";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 
 const Container = styled.div`
@@ -77,7 +79,10 @@ const MenuItem = styled.div`
 `;
 
 
-function Navbar() { 
+function Navbar() {  
+  const { users, logOut } = useAuth();
+  
+  const { displayName, photoURL } = users;
   const quantity = useSelector(state=>state.cart.quantity) 
 
     return (
@@ -94,8 +99,21 @@ function Navbar() {
           <Logo> <Span> Daily</Span> Bazar</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem> 
+         
+        {users?.displayName ? 
+                            <Button  onClick={logOut} variant="danger">Logout</Button> :
+                            < MenuItem as={Link} to="/login">LOGIN</ MenuItem>}
+                        < MenuItem> 
+                           <img
+                         style={{
+                         width: '40px',
+                        borderRadius: '50%',
+                        }}
+                       src={photoURL}
+                       alt=""
+                      />
+                           <a href="#login">{displayName}</a>
+                        </ MenuItem>
           <Link to="/cart">  
           <MenuItem>
              <Badge badgeContent={quantity} color="primary">
