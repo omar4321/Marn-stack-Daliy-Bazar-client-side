@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'http://localhost:5000/api/';
+const BASE_URL = 'https://cryptic-taiga-35912.herokuapp.com/api/';
 const TOKEN =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzJjODYzNzNlMjhkZjdkYTBkNWRkOCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MDE1NTMwMiwiZXhwIjoxNjQwNDE0NTAyfQ.tCFJuJbCVw2Nn - CYt3uCfGFmzIq -QxJoO8E2_XQQ5_Y';
 

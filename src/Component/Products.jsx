@@ -19,7 +19,7 @@ function Products({cat, filter , sort}) {
   useEffect(()=>{
    const getProducts = async ()=>{
      try{
-          const res = await axios.get( cat ?`http://localhost:5000/api/products=${cat}` : "http://localhost:5000/api/products")
+          const res = await axios.get( cat ?`https://cryptic-taiga-35912.herokuapp.com/api/products=${cat}` : "https://cryptic-taiga-35912.herokuapp.com/api/products")
           console.log(res)
           setProducts(res.data)
      }catch(err){
