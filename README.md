@@ -27,4 +27,4 @@ I'm a full stack developer...
 
 **Client:** React, react-bootstrap, Rowcss, react router
 
-**Server:** fackdata" 
+**Server:** Rest Api" 
